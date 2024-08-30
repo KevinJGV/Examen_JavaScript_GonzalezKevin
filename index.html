@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tastrack</title>
+        <script defer type="module" src="main.js"></script>
+        <link
+            rel="shortcut icon"
+            href="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f354.svg"
+            type="image/x-icon"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="flex_col relative">
+        <header class="flex wrap unselected all_c relative">
+            <h1 id="logo">Tastrack</h1>
+            <nav>
+                <ul class="flex j_se wrap">
+                    <li>
+                        <label for="buscar">Busca tu receta</label>
+                        <input
+                            id="buscar"
+                            type="text"
+                            placeholder="Arepa pepiada"
+                        />
+                    </li>
+                    <li>
+                        <label for="filtrar">Filtrar</label>
+                        <select name="filtrar" id="filtrar">
+                            <option value="" selected>
+                                Selecciona un filtro
+                            </option>
+                            <option value="Desayuno">Desayuno</option>
+                            <option value="Almuerzo">Almuerzo</option>
+                            <option value="Merienda">Merienda</option>
+                            <option value="Cena">Cena</option>
+                            <option value="Postre">Postre</option>
+                            <option value="Fácil">Dificultad - Fácil</option>
+                            <option value="Medio">Dificultad - Medio</option>
+                            <option value="Difícil">
+                                Dificultad - Difícil
+                            </option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="flex all_c relative">
+            <aside class="flex fixed">
+                <input type="checkbox" id="toggle" class="no_display"/>
+                <label for="toggle" class="flex j_sa unselected all_c pointer relative">
+                    Añadir receta
+                </label>
+                <form action="post" id="nuevo" class="fixed">
+                    <h2>Añade tu nueva receta</h2>
+                    <div class="grid">
+                        <div>
+                            <h3>Nombre</h3>
+                            <input
+                                id="nuevo_nombre"
+                                type="text"
+                                maxlength="20"
+                                minlength="1"
+                                placeholder="Macarrons"
+                            />
+                        </div>
+                        <div>
+                            <h3>Ingredientes</h3>
+                            <textarea
+                                name="nuevo_ingrediente"
+                                id="nuevo_ingrediente"
+                                cols="25"
+                                rows="5"
+                                placeholder="Recuerda los ingredientes en éste campo de texto"
+                            ></textarea>
+                        </div>
+                        <div>
+                            <h3>Instrucciones de preparación</h3>
+                            <textarea
+                                name="nuevo_instrucciones"
+                                id="nuevo_instrucciones"
+                                cols="25"
+                                rows="5"
+                                placeholder="Detalla el paso a paso en éste campo de texto"
+                            ></textarea>
+                        </div>
+                        <div>
+                            <h3>Tiempo de preparación</h3>
+                            <input
+                                type="time"
+                                name="nuevo_tiempo"
+                                id="nuevo_tiempo"
+                                value="00:00"
+                            />
+                        </div>
+                        <div>
+                            <h3>Número de porciones</h3>
+                            <input
+                                type="number"
+                                name="nuevo_porcion"
+                                id="nuevo_porcion"
+                            />
+                        </div>
+                        <div>
+                            <h3>Categoría</h3>
+                            <select name="nuevo_categoria" id="nuevo_categoria">
+                                <option value="Desayuno" selected>
+                                    Desayuno
+                                </option>
+                                <option value="Almuerzo">Almuerzo</option>
+                                <option value="Merienda">Merienda</option>
+                                <option value="Cena">Cena</option>
+                                <option value="Postre">Postre</option>
+                            </select>
+                        </div>
+                        <div>
+                            <h3>Nivel de dificultad</h3>
+                            <select
+                                name="nuevo_dificultad"
+                                id="nuevo_dificultad"
+                            >
+                                <option value="Fácil" selected>Fácil</option>
+                                <option value="Medio">Medio</option>
+                                <option value="Difícil">Difícil</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="submit" type="submit" for="nuevo">Agregar</button>
+                </form>
+            </aside>
+            <article class="grid">
+                <div class="flex_col relative card all_c">
+                    <h3>Nombre de receta</h3>
+                    <strong>Ingredientes: </strong> <span>asdadsa</span>
+                    <strong>Instrucciones: </strong> <span>asdadsa</span>
+                    <strong>Tiempo estimado: </strong> <span>00:00</span>
+                    <strong>Porciones: </strong> <span>2</span>
+                    <strong>Categoría: </strong> <span>Postre</span>
+                    <strong>Dificultad: </strong> <span>Medio</span>
+                    <button>Eliminar</button>
+                </div>
+            </article>
+        </main>
+    </body>
+</html>
